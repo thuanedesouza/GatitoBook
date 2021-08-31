@@ -12,7 +12,8 @@ import { HomeModule } from './home/home.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule
+    //HomeModule // agora esse vai ser passado por rota, sobre demanda
+    //isso influencia na performance(carregar por demanda: lazy loading)
   ],
   providers: [],
   bootstrap: [AppComponent]
