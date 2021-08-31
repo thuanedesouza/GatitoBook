@@ -12,6 +12,11 @@ const routes: Routes = [
     loadChildren:()=>import('./home/home.module')//retorna uma promise
     .then((m)=>m.HomeModule),// as rotas que estão dentro do modulo home ficam encapsuladas na pasta do home
 
+  },
+  {
+    path: 'animais',
+    loadChildren:()=>import('./animais/animais.module').
+    then((m)=>m.AnimaisModule)
   }
 ];
 
