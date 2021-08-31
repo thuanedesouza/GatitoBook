@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root'//onde definimos onde esse service pode ser injetado
 })
 export class AutenticacaoService {
 //motor de injeção de dependencia para instanciar serviço externo

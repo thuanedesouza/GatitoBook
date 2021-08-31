@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AutenticacaoService } from 'src/app/autenticacao/autenticacao.service';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +13,21 @@ export class LoginComponent implements OnInit {
   senha = '';
 
 
-  constructor() { }
+  constructor(private authService: AutenticacaoService) { }
 
   ngOnInit(): void {
   }
 
-  login(){
-    console.log(this.usuario, this.senha);
+  login(){//o metodo autenticar está implementado no service
+    this.authService.autenticar(this.usuario, this.senha).subscribe(() => {
+      //caso sucesso
+      console.log('Autenticado com sucesso');
+
+    }, (error)=>{
+      alert("Usuario ou senha invalido");
+      console.log(error);
+    });
+
   }
 
 }
