@@ -1,4 +1,4 @@
-# Gatitobook
+# GatitoBook
 
 Projeto feito para explorando boas práticas de Angular utilizando o angular/cli como ferramenta em todo o fluxo de trabalho aplicando a opção --strict e configurei o Bootstrap como framework CSS global.
 
