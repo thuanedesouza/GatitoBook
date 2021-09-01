@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   //criando modelo
   usuario ='';//onde o modelo altera a view
-  senha = '';
+  senha ='';
 
   // o router é um serviço padrão do angular
   constructor(

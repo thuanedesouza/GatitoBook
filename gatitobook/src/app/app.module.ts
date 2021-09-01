@@ -5,20 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { HttpClientModule } from '@angular/common/http';
-import { MensagemComponent } from './componente/mensagem/mensagem.component';
+import { MensagemModule } from './componentes/mensagem/mensagem.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MensagemComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
     //HomeModule // agora esse vai ser passado por rota, sobre demanda
     //isso influencia na performance(carregar por demanda: lazy loading)
+    MensagemModule
+
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
