@@ -8,7 +8,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MensagemModule } from '../componentes/mensagem/mensagem.module';
 import { NovoUsuarioComponent } from './novo-usuario/novo-usuario.component';
 
-
 @NgModule({
   declarations: [HomeComponent, LoginComponent, NovoUsuarioComponent],
   imports: [
@@ -16,11 +15,8 @@ import { NovoUsuarioComponent } from './novo-usuario/novo-usuario.component';
     HomeRoutingModule,
     FormsModule,
     MensagemModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
   ],
-  exports: [
-    HomeComponent
-  ]
+  exports: [HomeComponent],
 })
-export class HomeModule { }
+export class HomeModule {}
