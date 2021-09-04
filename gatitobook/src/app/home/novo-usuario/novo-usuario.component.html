@@ -39,6 +39,15 @@
       class="form-control"
       formControlName="userName"
     />
+    <app-mensagem
+    *ngIf="
+    novoUsuarioForm.get('userName')?.errors?.minusculo &&
+    novoUsuarioForm.get('userName')?.touched"
+
+    mensagem="O usuário deve ser em letras minúsculas"
+    >
+
+    </app-mensagem>
   </div>
   <div class="form-group">
     <input
