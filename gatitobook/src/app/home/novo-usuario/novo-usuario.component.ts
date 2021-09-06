@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { minusculoValidator } from './minusculo.validator';
 import { NovoUsuario } from './novo-usuario';
 import { NovoUsuarioService } from './novo-usuario.service';
+import { UsuarioExisteService } from './usuario-existe.service';
 
 @Component({
   selector: 'app-novo-usuario',
@@ -13,20 +14,26 @@ export class NovoUsuarioComponent implements OnInit {
   novoUsuarioForm!: FormGroup; //usamos !: para mostrar que esse objeto pode ser nulo ou não
 
   constructor(
-    private FormBuilder: FormBuilder,
-    private novoUsuarioService: NovoUsuarioService
+    private formBuilder: FormBuilder,
+    private novoUsuarioService: NovoUsuarioService,
+    private usuarioExisteService: UsuarioExisteService
   ) {}
 
   ngOnInit(): void {
-    this.novoUsuarioForm = this.FormBuilder.group({
-      email:['', [Validators.required, Validators.email]],
-      fullName:['', [Validators.required, Validators.minLength(4)]],
-      userName: ['', [minusculoValidator]],
+    this.novoUsuarioForm = this.formBuilder.group({
+      //usar os mesmos nomes que estão na interface
+      email: ['', [Validators.required, Validators.email]],
+      fullName: ['', [Validators.required, Validators.minLength(4)]],
+      userName: [
+        '',
+        [minusculoValidator],
+        [this.usuarioExisteService.usuarioJaExiste()],
+      ],
       password: [''],
     });
   }
 
-  cadastrar(){
+  cadastrar() {
     const novoUsuario = this.novoUsuarioForm.getRawValue() as NovoUsuario;
     console.log(novoUsuario);
   }

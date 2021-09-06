@@ -1,9 +1,11 @@
-<h4 class="textt-center">Registre-se e mostre seu pet ao mundo!</h4>
+<h4 class="text-center">Registre-se e mostre seu pet ao mundo!</h4>
 
 <form class="form mt-4" [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
   <div class="form-group">
-    Registre
-    <input placeholder="E-mail" class="form-control" formControlName="email" />
+    <input
+    placeholder="e-mail"
+    class="form-control"
+    formControlName="email" />
     <app-mensagem
       *ngIf="
         novoUsuarioForm.get('email')?.errors?.required &&
@@ -11,7 +13,6 @@
       "
       mensagem="E-mail obrigatório"
     >
-      <!--obs: ?. é o safe navigation operator -->
     </app-mensagem>
     <app-mensagem
       *ngIf="
@@ -24,7 +25,7 @@
   </div>
   <div class="form-group">
     <input
-      placeholder="Nome completo"
+      placeholder="Nome Completo"
       class="form-control"
       formControlName="fullName"
     />
@@ -48,9 +49,13 @@
         novoUsuarioForm.get('userName')?.errors?.minusculo &&
         novoUsuarioForm.get('userName')?.touched
       "
-      mensagem="O usuário deve ser em letras minúsculas"
+      mensagem="Usuário deve ser em letra minúscula"
     >
     </app-mensagem>
+    <app-mensagem
+      *ngIf="novoUsuarioForm.get('userName')?.errors?.usuarioExistente"
+      mensagem="Usuário já existe"
+    ></app-mensagem>
   </div>
   <div class="form-group">
     <input
@@ -64,6 +69,4 @@
   <button class="btn btn-primary btn-block">Cadastro</button>
 </form>
 
-<p>Já é um usuário?<a [routerLink]="['']">Faça login!</a></p>
-<!-- Como estou dentro de um componente que está dentro do modulo de home,
-o angular já entende o nome de rota nesse formato, nao preciso escrever ela toda-->
+<p>Já é um usuário? <a [routerLink]="['']">Faça Login</a></p>

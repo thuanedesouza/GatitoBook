@@ -14,6 +14,10 @@ export class NovoUsuarioService {
   return this.http.post('http://localhost:3000/user/signup', novoUsuario);
   //porta 3000 é onde está rodando a api, estamos mandando essa info para o backend
   }
+
+  verificaUsuarioExistente(nomeUsuario:string){
+    return this.http.get(`http://localhost:3000/user/exists/${nomeUsuario}`)
+  }
 }
 
 
