@@ -9,16 +9,17 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class UsuarioService {
 
+  //uma observable que guarda o último estado
+  private usuarioSubject = new BehaviorSubject<Usuario>({})
+
   constructor( private tokenService: TokenService) {
       //caso já tenha um token na localStorage
   if(this.tokenService.possuiToken()){
     this.decodificaJWT();
   }
-   }
+ }
 
 
-  //uma observable que guarda o último estado
-  private usuarioSubject = new BehaviorSubject<Usuario>({})
 
   //pegar info do token e decotificar pra transformar em um objeto de usuario
   private decodificaJWT(){

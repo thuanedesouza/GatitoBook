@@ -21,7 +21,8 @@ import { RodapeModule } from './componentes/rodape/rodape.module';
     //HomeModule // agora esse vai ser passado por rota, sobre demanda
     //isso influencia na performance(carregar por demanda: lazy loading)
     MensagemModule,
-
+    CabecalhoModule,
+    RodapeModule
   ],
 
   providers: [],

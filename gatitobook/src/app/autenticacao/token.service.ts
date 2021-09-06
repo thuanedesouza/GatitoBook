@@ -11,20 +11,20 @@ export class TokenService {
 
 // não injetamos nada nessa classe
 
-retornaToken(){
-  return localStorage.getItem(KEY) ?? '';// caso não pegue a chave retorna ''
-}
+  retornaToken(){
+    return localStorage.getItem(KEY) ?? '';// caso não pegue a chave retorna ''
+  }
 
-salvaToken(token: string){
-  localStorage.setItem(KEY, token);
-}
+  salvaToken(token: string){
+    localStorage.setItem(KEY, token);
+  }
 
-excluiToken(){
-  localStorage.removeItem(KEY);
-}
+  excluiToken(){
+    localStorage.removeItem(KEY);
+  }
 
-possuiToken(){
-  return !!this.retornaToken;// !! verifica se tem ou não tem
-}
+  possuiToken(){
+    return !!this.retornaToken;// !! verifica se tem ou não tem
+  }
 
 }

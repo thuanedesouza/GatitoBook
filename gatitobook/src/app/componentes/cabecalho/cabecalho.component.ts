@@ -8,9 +8,8 @@ import { UsuarioService } from 'src/app/autenticacao/usuario/usuario.service';
   styleUrls: ['./cabecalho.component.css']
 })
 export class CabecalhoComponent {
+  user$ = this.usuarioService.retornaUsuario();
   //comunidade angular usa cifrão na frente da variavel para indicar que ela é uma observavle.
-  user$ = this.usuarioService.retornaUsuario;
-
 
   constructor(
     private usuarioService: UsuarioService,
