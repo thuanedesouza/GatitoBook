@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MensagemModule } from './componentes/mensagem/mensagem.module';
+import { CabecalhoModule } from './componentes/cabecalho/cabecalho.module';
+import { RodapeModule } from './componentes/rodape/rodape.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { MensagemModule } from './componentes/mensagem/mensagem.module';
     HttpClientModule,
     //HomeModule // agora esse vai ser passado por rota, sobre demanda
     //isso influencia na performance(carregar por demanda: lazy loading)
-    MensagemModule
+    MensagemModule,
 
   ],
 
