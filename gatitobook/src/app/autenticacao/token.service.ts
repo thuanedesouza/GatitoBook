@@ -24,7 +24,7 @@ export class TokenService {
   }
 
   possuiToken(){
-    return !!this.retornaToken;// !! verifica se tem ou não tem
+    return !!this.retornaToken();// !! verifica se tem ou não tem
   }
 
 }

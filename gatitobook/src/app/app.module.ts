@@ -18,10 +18,10 @@ import { RodapeModule } from './componentes/rodape/rodape.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    //HomeModule // agora esse vai ser passado por rota, sobre demanda
+    HomeModule, // agora esse vai ser passado por rota, sobre demanda
     //isso influencia na performance(carregar por demanda: lazy loading)
     MensagemModule,
-    CabecalhoModule,
+   CabecalhoModule,
     RodapeModule
   ],
 
